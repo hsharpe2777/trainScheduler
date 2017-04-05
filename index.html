@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+	<head>
+		<title>TrainSchduler</title>
+	</head>
+
+	<!--Bottstrap Link-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+	<!--Styleshet Link-->
+	<link rel="stylesheet" href="assets/style.css">
+
+	<!--Add Row-->
+	<div class="row">
+			<!--Header-->
+			<div class="header">
+				<!--Column for logo-->
+				<div class="col-sm-1">
+					<img class="logo" src="assets/trainlogo.png">
+				</div>
+				
+				<!--Column for logo text-->
+				<div class="col-sm-1">
+					<h2>TrainScheduler</h2>
+				</div>
+			</div>
+		
+	</div>
+
+	<!--Column for jumbotron w/ train station image-->
+	<div class="row">
+		<!--Column for centering-->
+		<div class="col-sm-1">
+		</div>
+		
+		<!--Column for jumbotron-->
+		<div class="col-sm-10">
+			<div class="jumbotron">		
+			</div>
+		</div>
+
+		<!--Column for centering-->
+		<div class="col-sm-1">
+		</div>
+	</div>
+
+<body>
+
+		<!--Row for Train Schedule-->
+		<div class="row">
+			 <!--Column for centering-->
+			<div class="col-sm-1">
+			</div>
+
+
+			<div class="col-sm-10">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">Current Train Schedule</div>
+
+					<!-- Table -->
+					<table class="table">
+							 <tr>
+								 <th>Train Name</th>
+								 <th>Destination</th>
+								 <th>First Train Time (Military time) </th>
+								 <th>Frequency</th>
+								 <th>Minutes Away</th>
+							 </tr>
+							
+
+					</table>
+				</div>
+			</div>
+
+			<!--Column for centering-->
+			<div class="col-sm-1">
+			</div>
+		</div>
+		<!--Row for Adding Train-->
+		<div class="row">
+			 <!--Column for centering-->
+			<div class="col-sm-1">
+			</div>
+
+
+			<div class="col-sm-10">
+				<div class="panel panel-default">
+						 <!-- Default panel contents -->
+						 <div class="panel-heading">Add Train</div>
+						 <label>Train Name</label>
+						 	 <br>
+						 <input type="text" id="name">
+						 <label>Destination</label>
+						 	 <br>
+						 <input type="text" id="destination">
+						 <label>First Train Time</label>
+						 	 <br>
+						 <input type="text" id="first-train">
+						 <label>Frequency (In minutes)</label>
+						 	 <br>
+						 <input type="text" id="frequency">
+
+						 <button type="submit" class="btn btn-default">Submit</button>
+
+				</div>
+			</div>
+
+			 <!--Column for centering-->
+			 <div class="col-sm-1">
+			 </div>
+		</div>
+
+				
+	</body>
+
+</html>
+	<!--firebase script-->
+  <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+  <script src="assets/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
