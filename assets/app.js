@@ -2,7 +2,7 @@
   var config = {
     apiKey: "AIzaSyCDHJriFELii-zbCHB3d-W0NxmSd69adIc",
     authDomain: "train-scheduler-6fe47.firebaseapp.com",
-    databaseURL: "https://train-scheduler-6fe47.firebaseio.com",
+    databaseURL: "http://train-scheduler-6fe47.firebaseio.com",
     projectId: "train-scheduler-6fe47",
     storageBucket: "train-scheduler-6fe47.appspot.com",
     messagingSenderId: "295462155327"
@@ -25,13 +25,8 @@ function display (){
 		var firstTrain = $("#first-train").val().trim();
 		var frequency = $("#frequency").val().trim();
 
-		//setting up time
 
-
-		
- 
-
-		 // Save the new price in Firebase
+		 // Save the new variables in Firebase
 	    database.ref().push({
 	      displayName: displayName,
 	      destination: destination,
@@ -66,7 +61,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 	  	frequency = childSnapshot.val().frequency;
 	  	
 	  	
-
+	  	//set up time
 	  	// First Time (pushed back 1 year to make sure it comes before current time)
 	    var firstTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
 	    console.log(firstTimeConverted);
@@ -82,16 +77,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 	    // Time apart 
 	    var tRemainder = diffTime % frequency;
 	    console.log(tRemainder);
-
-	    // Minute Until Train
+	    
+	  	// Minutes Until Next Train
 	    var minutesAway = frequency - tRemainder;
 	    console.log("minutes until next arrival: " + minutesAway);
-
-	    // Next Train
-	    var nextTrain = moment().add(minutesAway, "minutes");
-	  	
-	  	// Minute Until Train
-	    var minutesAway = frequency - tRemainder;
 
 
 		//display values in html
